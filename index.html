@@ -1,0 +1,124 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gymkana Navideña</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://subir-imagen.com/images/2024/12/03/7e4059da6bc853b06a65c69bf7cc198c69cdaf428013acfe.jpeg');
+            background-size: cover;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #d32f2f;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #a40000;
+            }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .success {
+            color: #2e7d32;
+        }
+
+        .error {
+            color: #d32f2f;
+        }
+
+        .clue {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎅 ¡Gymkana Navideña! 🎄</h1>
+        <p>Resuelve el código navideño para encontrar la pista siguiente.</p>
+        <input type="text" id="codigo" placeholder="Introduce el código de 3 cifras" maxlength="3">
+        <button onclick="verificarCodigo()">Comprobar</button>
+        <div class="message" id="mensaje"></div>
+        <p class="clue">
+            Pistas:
+            <ul>
+                <li>Número de países que hemos visitado.</li>
+                <li>La suma de las cifras del día de nuestro aniversario.</li>
+                <li>Número de letras de nuestro apodo.</li>
+            </ul>
+        </p>
+    </div>
+
+    <script>
+        // El código correcto que debe introducir
+        const codigoCorrecto = "462";
+
+        function verificarCodigo() {
+            const codigoIngresado = document.getElementById("codigo").value;
+            const mensaje = document.getElementById("mensaje");
+
+            if (codigoIngresado === codigoCorrecto) {
+                mensaje.textContent = "¡Código correcto! Ve al cajón de tu escritorio. 🎁";
+                mensaje.className = "message success";
+            } else {
+                mensaje.textContent = "Código incorrecto, ¡intenta de nuevo! ❌";
+                mensaje.className = "message error";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
